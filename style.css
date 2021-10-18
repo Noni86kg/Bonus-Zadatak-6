@@ -1,0 +1,274 @@
+:root {
+    --softCyanFullSliderBar: rgb(165, 243, 235);
+    --strongCyanSliderBg: rgb(16, 213, 194);
+    --lightGrayishRedDiscountBg: rgb(254, 236, 231);
+    --lightRedDiscountText: rgb(255, 140, 102);
+    --paleBlueCTAText: rgb(189, 204, 255);
+
+    --whitePricingComponentBg: rgb(255, 255, 255);
+    --veryPaleBlueMainBg: rgb(250, 251, 255);
+    --lightGrayishBlueEmptySliderBar: rgb(234, 238, 251);
+    --lightGrayishBlueToggleBg: rgb(205, 215, 238);
+    --grayishBlueText: rgb(133, 143, 173);
+    --darkDesaturatedBlueTextCTABg: rgb(41, 51, 86);
+
+    --sliderBG: linear-gradient(
+        to right, var(--softCyanFullSliderBar) 50%, var(--lightGrayishBlueEmptySliderBar) 0%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(images/bg-pattern.svg);
+    height: 55vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 15px;
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+p {
+    color: var(--grayishBlueText);
+}
+/***************
+Header
+***************/
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+header img {
+    position: absolute;
+    z-index: -1;
+}
+header p {
+    margin-top: 20px;
+}
+/***************
+Card
+***************/
+.card {
+    width: 40vw;
+    position: absolute;
+    top: 60vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--whitePricingComponentBg);
+    border-radius: 15px;
+    box-shadow: 0 0px 50px 0 rgba(0, 0, 0, .2);
+}
+.top {
+    display: grid;
+    grid-template: "pageviews dollars"
+                    "slider slider"
+                    "top-btn top-btn";
+    grid-auto-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+    padding: 65px 45px 45px 45px;
+    border-bottom: 1px solid var(--lightGrayishBlueToggleBg);
+}
+.pageviews {
+    grid-area: pageviews;
+}
+.pageviews h3 {
+    color: var(--grayishBlueText);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.dollars {
+    grid-area: dollars;
+    justify-content: flex-end;
+}
+.dollars h2 {
+    font-size: 36px;
+}
+.dollars span {
+    font-size: 18px;
+    color: var(--grayishBlueText);
+    margin-left: 8px;
+    letter-spacing: 1px;
+    
+}
+.pageviews,
+.dollars {
+    display: flex;
+    align-items: center;
+}
+/***********
+input
+***********/
+.slider {
+    grid-area: slider;
+    margin: 4vh auto;
+    width: 100%;
+}
+.slider input {
+    width: 100%;
+    height: 16px;
+    -webkit-appearance: none;
+    background: var(--sliderBG);
+    outline: none;
+    border-radius: 8px;
+}
+.slider input::-webkit-slider-thumb {
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: url('./images/icon-slider.svg') center no-repeat;
+    background-color:   var(--strongCyanSliderBg);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 15px 25px 0 rgba(16, 213, 194, .4);;
+  }
+  .slider input::-webkit-slider-thumb:hover {
+    background-color: rgb(14, 170, 155);
+  }
+/*************
+top-btn
+*************/
+.top-btn {
+    grid-area: top-btn;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+}
+.toggle {
+    width: 44px;
+    height: 22px;
+    border-radius: 12px;
+    background: var(--lightGrayishBlueToggleBg);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.toggle::before {
+    content: '';
+    display: block;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--veryPaleBlueMainBg);
+    margin-left: 3px;
+}
+.toggle.active {
+    background: var(--strongCyanSliderBg);
+}
+.active.toggle::before {
+    background: var(--veryPaleBlueMainBg);
+    margin-left: 23px;
+}
+.toggle:hover {
+    background: var(--strongCyanSliderBg);
+}
+.top-btn h5 {
+    color: var(--lightRedDiscountText);
+    background: var(--lightGrayishRedDiscountBg);
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+.top-btn h5::first-letter {
+    visibility: hidden;
+}
+/***************
+Bottom
+***************/
+.bottom {
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom-left div {
+    display: flex;
+    align-items: center;
+}
+.bottom-left p {
+    margin: 10px 0 10px 25px;
+}
+.bottom-left div::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url(images/icon-check.svg);
+    height: 12px;
+    width: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+button {
+    width: 170px;
+    height: 44px;
+    color: var(--grayishBlueText);
+    background: var(--darkDesaturatedBlueTextCTABg);
+    border-radius: 22px;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+}
+button:hover {
+    color: var(--lightGrayishRedDiscountBg);
+}
+/******************
+Responsive for ipad
+******************/
+@media (max-width: 1200px) {
+    .card {
+        width: 70vw;
+    }
+}
+/******************
+Responsive for mob
+******************/
+@media (max-width: 767px) {
+    .card {
+        width: 90vw;
+        top: 80vh;
+    }
+    .top {
+        grid-template: "pageviews"
+                        "slider"
+                        "dollars"
+                        "top-btn";
+            
+        grid-auto-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+        padding: 35px 15px 25px 15px;
+    }
+    .pageviews,
+    .dollars {
+        margin: 0 auto;
+    }
+    .top-btn h5 span {
+        display: none;
+    }
+    .top-btn h5::first-letter {
+        visibility: visible;
+    }
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .bottom-left div {
+        justify-content: center;
+    }
+    .bottom-left div::before {
+        position: relative;
+    }
+    .bottom-left p {
+        margin: 10px 0 10px 15px;
+    }
+    button {
+        margin-top: 25px;
+    }
+}

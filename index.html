@@ -3,26 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Insert Title Here</title>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <img src="images/pattern-circles.svg" alt="circles">
+    <h1>Simple, traffic-based pricing</h1>
+    <p>Sign-up for our 30-day trial. No credit card required.</p>
+  </header>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+  <!-- Card -->
+  <main class="card">
+      <!-- Top -->
+    <section class="top">
+      <div class="pageviews"><h3>100K PAGEVIEWS</h3></div>
+      <div class="dollars"><h2>$16.00 </h2>
+        <span>/month</span></div>
+        <form class="slider">
+          <input type="range" name="slider" id="slider" value="3" min="1" max="5">
+        </form>
+        <div class="top-btn">
+          <p>Monthly Billing</p>
+          <div class="toggle"></div>
+          <p>Yearly Billing</p>
+          <h5>-25% <span>discount</span></h5>
+        </div>
+    </section>
 
-  Pageviews
-  $ /month
+    <!-- Bottom -->
+    <section class="bottom">
+      <div class="bottom-left">
+        <div><p>Unlimited websites</p></div>
+        <div><p>100% data ownership</p></div>
+        <div><p>Email reports</p></div>
+      </div>
+      <button>Start my trial</button>
+    </section>
+  </main>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+  <script src="script.js"></script>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
 </body>
 </html>
