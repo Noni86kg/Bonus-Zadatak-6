@@ -59,9 +59,9 @@ Card
 .card {
     width: 40vw;
     position: absolute;
-    top: 60vh;
+    top: calc(15vh + 100px);
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background: var(--whitePricingComponentBg);
     border-radius: 15px;
     box-shadow: 0 0px 50px 0 rgba(0, 0, 0, .2);
@@ -129,9 +129,12 @@ input
     cursor: pointer;
     box-shadow: 0 15px 25px 0 rgba(16, 213, 194, .4);;
   }
-  .slider input::-webkit-slider-thumb:hover {
+.slider input::-webkit-slider-thumb:hover {
     background-color: rgb(14, 170, 155);
-  }
+}
+.slider input::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
 /*************
 top-btn
 *************/
@@ -231,9 +234,19 @@ Responsive for ipad
 Responsive for mob
 ******************/
 @media (max-width: 767px) {
+    header {
+        width: 90%;
+        margin: 6vh auto 0 auto;
+    }
+    header h1 {
+        font-size: 28px;
+    }
+    header p {
+        margin-top: 14px;
+        font-size: 14px;
+    }
     .card {
         width: 90vw;
-        top: 80vh;
     }
     .top {
         grid-template: "pageviews"
